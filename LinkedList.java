@@ -16,7 +16,7 @@ public class LinkedList {
     public static int size;  // Tracks the number of elements in the LinkedList
 
     // Add an element to the beginning of the LinkedList
-    public void addFirst(int data) { 
+    public void addFirst(int data) { // Time Complexity = O(1);
         // Create a new node with the given data
         Node newNode = new Node(data);
         size++; // Increment size as we are adding a new element
