@@ -117,6 +117,30 @@ public class DoublyLL {
         System.out.println("null"); // Indicate the end of the list
     }
 
+    // reverse a doubly linked list
+    public void reverse() {
+        // If the list is empty or has only one node, nothing to reverse
+        if (head == null || head == tail) {
+            return;
+        }
+
+        Node curr = head; 
+        Node prev = null;
+        Node next;
+
+        // Traverse the list and swap the next and previous pointers
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    
+    }
+
     // Main method to test the doubly linked list
     public static void main(String[] args) {
         DoublyLL dll = new DoublyLL(); // Create a new doubly linked list
@@ -129,6 +153,10 @@ public class DoublyLL {
 
         // Print the list
         System.out.print("List after additions: ");
+        dll.print();
+
+        dll.reverse();
+        System.out.print("List after reversing: ");
         dll.print();
 
         // Remove elements from the list
